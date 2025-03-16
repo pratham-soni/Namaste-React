@@ -1,27 +1,32 @@
+import React from "react";
+import ReactDOM from "react-dom/client"
+
 // for creating an element h1 using react
 const heading = React.createElement("h1", {id: "heading", xyz: "abc"}, "Hello world using react from external file!");
 
-// creating nested elements
-/* 
-<div id="parent">
-    <div id="chile">
-        <h1>I am h1 tag<h1>
-    <div/>
-<div/>
 
-*/
-
+// adding multiple childs
 const parent = React.createElement(
     "div",
     {id: "parent"},
-    React.createElement(
-        "div",
-        {id: "clild"},
-        [
-            React.createElement("h1",{},"I am a h1 tag"),
-            React.createElement("h2",{},"I am a h2 tag")
-        ]
-    )
+    [
+        React.createElement(
+            "div",
+            {id: "clild1"},
+            [
+                React.createElement("h1",{},"I am a h1 tag"),
+                React.createElement("h2",{},"I am a h2 tag for nested")
+            ]
+        ),
+        React.createElement(
+            "div",
+            {id: "clild2"},
+            [
+                React.createElement("h1",{},"I am a h1 tag"),
+                React.createElement("h2",{},"I am a h2 tags")
+            ]
+        )
+    ]
 )
 
 // for creating a root for react 

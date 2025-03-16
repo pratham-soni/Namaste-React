@@ -7,11 +7,17 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <div class="root" id="root"></div>
+    <h1>hello from top of root</h1>
+    <div class="root" id="root">
 
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
-    <script src="./app.js"></script>
+
+    </div>
+    <h1>heelo from bottom of root</h1>
+    
+<!-- normal javascript file can not have imports or exports 
+since we need our file for importing the react it means we need to tell browser that
+this app.js is not a normal js file. instead it is a module, so it can have import inside in it-->
+    <script type="module" src="./app.js"></script>
 </body>
 </html>
