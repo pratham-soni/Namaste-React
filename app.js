@@ -34,3 +34,41 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(jsxHeading);
 
 // React Component
+/*
+two types of components
+Class based - Old way of writing code
+Functional based - New way of writing code
+components naming shouls always start with capital letter
+*/
+
+const HeadingComponent = () => {
+  return <h1>Namaste React Functional Component</h1>;
+};
+
+// way to write the components in different ways
+const fn1 = () => {
+  return true;
+};
+
+const fn2 = () => true;
+
+const Title = () => (
+  <h1 className="randomName" id="randomID">
+    Title Componened details
+  </h1>
+);
+
+const HeadingComponnet2 = () => (
+  <div className="container">
+    <Title />
+    <h1 className="headingTagh1">Heading2 component</h1>
+  </div>
+);
+
+// to render a component
+
+root.render(<HeadingComponnet2 />);
+
+/*
+? what is the difference between react element and react functional component ?
+*/
