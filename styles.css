@@ -37,12 +37,12 @@
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .res-card {
-  width: 170px;
-  height: 270px;
+  width: 30%;
+  height: 60%;
   border: 1px solid rgb(255, 255, 255);
   border-radius: 10px;
   padding: 10px;
@@ -60,4 +60,30 @@
 
 .res-name {
   margin: 1px;
+}
+
+.footer {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.res-copyright-container {
+  display: flex;
+  margin: 2px;
+  padding: 2px;
+  width: 50%;
+}
+
+.copyright-item {
+  margin: 2px;
+  padding: 2px;
+}
+.copyright-item-name {
+  margin: 2px;
+  padding-top: 8px;
+}
+
+.copyright-item > div {
+  margin: 2px;
 }
