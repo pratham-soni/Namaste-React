@@ -27,7 +27,7 @@ we use camelCasing for giving attribute into the JSX
 H.W. -> how to write different tags (a, img, src etc) inside jsx
 */
 
-console.log(jsxHeading);
+// console.log(jsxHeading);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -39,6 +39,7 @@ two types of components
 Class based - Old way of writing code
 Functional based - New way of writing code
 components naming shouls always start with capital letter
+functional component is a JS function which returns a piece of JSX or react element
 */
 
 const HeadingComponent = () => {
@@ -52,15 +53,46 @@ const fn1 = () => {
 
 const fn2 = () => true;
 
-const Title = () => (
+// const Title = () => (
+//   <h1 className="randomName" id="randomID">
+//     Title Componened details
+//   </h1>
+// );
+
+const Title = function () {
+  return (
+    <h1 className="randomName" id="randomID">
+      Title Componened details
+    </h1>
+  );
+};
+
+//inserting a react element inside a component
+// we can insert this react element into component using "{}" curly braces.
+const reactEl = (
   <h1 className="randomName" id="randomID">
-    Title Componened details
+    react Element
   </h1>
 );
 
+// inserting a react element into another react element
+// we can insert this react element into another react element using "{}" curly braces.
+const finalElement = (
+  <>
+    {reactEl}
+    <h1>creating finalElement</h1>
+  </>
+);
+
+// component composition (composing multiple component inside 1 component)
+// inserting a component inside another component
 const HeadingComponnet2 = () => (
   <div className="container">
+    {finalElement}
+    {/* below 3 lines are same */}
     <Title />
+    <Title></Title>
+    {Title()}
     <h1 className="headingTagh1">Heading2 component</h1>
   </div>
 );
