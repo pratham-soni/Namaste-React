@@ -2,105 +2,93 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 /*
-React Elements
-const heading = React.createElement("h1", {id:"root"}, "I am created using React.creareElement")
-
-JSX => javascript syntax, which can create the react element eaisier that React.createElement()
-JSX is not HTML inside javascript. It is HTML Like syntax
-console.log(heading)
+* Header
+  - Logo
+  - Nav-Items
+* Body
+  - Search
+  - RestaurentContainer
+    - RestaurentCard
+      - img
+      - name of res, star rating, cuisine etc, delivery time
+      
+* Footer
+  - Copyright
+  - Links
+  - Address
+  - Contact
 */
-
-// React Element
-const jsxHeading = (
-  <h1 id="root" className="head">
-    I am created using JSX
-  </h1>
-);
-
-// above line is not pure JS, JS Engine will not understand html code directly.
-/*
-* JSX will be transpiled before it reaches to browser ( ie, root.render()) - Parcel gives this job to Babel
-Babel - Trasnpiler
-JSX => React.createElement() => object => HTML 
-* Bable - is a node library - can transpile the ES6 code to older browser's compatible code
-we use camelCasing for giving attribute into the JSX
-H.W. -> how to write different tags (a, img, src etc) inside jsx
-*/
-
-// console.log(jsxHeading);
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(jsxHeading);
-
-// React Component
-/*
-two types of components
-Class based - Old way of writing code
-Functional based - New way of writing code
-components naming shouls always start with capital letter
-functional component is a JS function which returns a piece of JSX or react element
-*/
-
-const HeadingComponent = () => {
-  return <h1>Namaste React Functional Component</h1>;
-};
-
-// way to write the components in different ways
-const fn1 = () => {
-  return true;
-};
-
-const fn2 = () => true;
-
-// const Title = () => (
-//   <h1 className="randomName" id="randomID">
-//     Title Componened details
-//   </h1>
-// );
-
-const Title = function () {
+const Header = () => {
   return (
-    <h1 className="randomName" id="randomID">
-      Title Componened details
-    </h1>
+    <div className="header">
+      <div className="logo-container">
+        <img
+          className="logo"
+          src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png"
+        />
+      </div>
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Cart</li>
+        </ul>
+      </div>
+    </div>
   );
 };
 
-//inserting a react element inside a component
-// we can insert this react element into component using "{}" curly braces.
-const reactEl = (
-  <h1 className="randomName" id="randomID">
-    react Element
-  </h1>
-);
+const styleCard = {
+  backgroundColor: "#F0F0F0",
+};
 
-// inserting a react element into another react element
-// we can insert this react element into another react element using "{}" curly braces.
-const finalElement = (
-  <>
-    {reactEl}
-    <h1>creating finalElement</h1>
-  </>
-);
+const RestaurentCard = () => {
+  return (
+    <div className="res-card" style={styleCard}>
+      <img
+        alt="res-logo"
+        className="res-logo"
+        src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/8/22/5c6d3a34-1ac1-44ca-94cf-7e9122459ebc_945448.jpg"
+      ></img>
+      <h3 className="res-name">Megana Foods</h3>
+      <h5 className="res-cuisine">Gravy Fish, North Indian</h5>
+      <h5 className="res-rating"> 4.4 ⭐️</h5>
+      <h5 className="res-ETA">38 minutes</h5>
+    </div>
+  );
+};
 
-// component composition (composing multiple component inside 1 component)
-// inserting a component inside another component
-const HeadingComponnet2 = () => (
-  <div className="container">
-    {finalElement}
-    {/* below 3 lines are same */}
-    <Title />
-    <Title></Title>
-    {Title()}
-    <h1 className="headingTagh1">Heading2 component</h1>
-  </div>
-);
+const Body = () => {
+  return (
+    <div className="body">
+      <div className="search">Search</div>
+      <div className="res-container">
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+      </div>
+    </div>
+  );
+};
 
-// to render a component
+const AppLayout = () => {
+  return (
+    <div className="app">
+      <Header />
+      <Body />
+    </div>
+  );
+};
 
-root.render(<HeadingComponnet2 />);
-
-/*
-? what is the difference between react element and react functional component ?
-*/
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<AppLayout />);
