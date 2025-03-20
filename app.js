@@ -39,23 +39,38 @@ const Header = () => {
   );
 };
 
-const styleCard = {
-  backgroundColor: "#F0F0F0",
+/*
+id
+resName
+cuisines
+avgRating
+costForTwo
+deliveryTime
+*/
+
+const resObj = {
+  type: "restaurent",
+  data: {
+    id: "334475",
+    name: "KFC",
+    cuisines: ["Burers", "Biriyani", "American", "Snacks", "Fast Food"],
+    costForTwo: 40000,
+    deliveryTime: 36,
+    avgRating: "3.8",
+    img: "http://b.zmtcdn.com/data/pictures/chains/4/10624/24697b617bb8aaf5b1c7df9a7074a662.jpg?output-format=webp&fit=around|771.75:416.25&crop=771.75:416.25;*,*",
+  },
 };
 
 const RestaurentCard = (props) => {
-  console.log(props);
+  const { resData } = props;
   return (
-    <div className="res-card" style={styleCard}>
-      <img
-        alt="res-logo"
-        className="res-logo"
-        src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/8/22/5c6d3a34-1ac1-44ca-94cf-7e9122459ebc_945448.jpg"
-      ></img>
-      <h3 className="res-name">{props.resName}</h3>
-      <h5 className="res-cuisine">{props.resCuisine}</h5>
-      <h5 className="res-rating"> 4.4 ⭐️</h5>
-      <h5 className="res-ETA">38 minutes</h5>
+    <div className="res-card" style={{ backgroundColor: "#F0F0F0" }}>
+      <img alt="res-logo" className="res-logo" src={resData.data.img}></img>
+      <h3 className="res-name">{resData.data.name}</h3>
+      <h5 className="res-cuisine">{resData.data.cuisines.join(", ")}</h5>
+      <h5 className="res-rating"> {resData.data.avgRating} ⭐️</h5>
+      <h5 className="res-ETA">{resData.data.deliveryTime} minutes</h5>
+      <h5 className="res-ETA">{resData.data.costForTwo / 100}</h5>
     </div>
   );
 };
@@ -65,11 +80,7 @@ const Body = () => {
     <div className="body">
       <div className="search">Search</div>
       <div className="res-container">
-        <RestaurentCard
-          resName="Megana Foods"
-          resCuisine="Gravy Fish, North Indian"
-        />
-        <RestaurentCard resName="KFC" resCuisine="Fast Food, potato chips" />
+        <RestaurentCard resData={resObj} />
       </div>
     </div>
   );
