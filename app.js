@@ -48,7 +48,7 @@ costForTwo
 deliveryTime
 */
 
-const resObj = [
+const resList = [
   {
     type: "restaurent",
     data: {
@@ -210,14 +210,17 @@ const resObj = [
 
 const RestaurentCard = (props) => {
   const { resData } = props;
+  // optional chaining "?."
+  const { name, cuisines, avgRating, deliveryTime, costForTwo, img } =
+    resData?.data;
   return (
-    <div className="res-card" style={{ backgroundColor: "#F0F0F0" }}>
-      <img alt="res-logo" className="res-logo" src={resData.data.img}></img>
-      <h3 className="res-name">{resData.data.name}</h3>
-      <h5 className="res-cuisine">{resData.data.cuisines.join(", ")}</h5>
-      <h5 className="res-rating"> {resData.data.avgRating} ⭐️</h5>
-      <h5 className="res-ETA">{resData.data.deliveryTime} minutes</h5>
-      <h5 className="res-ETA">{resData.data.costForTwo / 100}</h5>
+    <div className="res-card">
+      <img alt="res-logo" className="res-logo" src={img}></img>
+      <h3 className="res-name">{name}</h3>
+      <h5 className="res-cuisine">{cuisines.join(", ")}</h5>
+      <h5 className="res-rating"> {avgRating} ⭐️</h5>
+      <h5 className="res-ETA">{deliveryTime} minutes</h5>
+      <h5 className="res-ETA">{costForTwo / 100}</h5>
     </div>
   );
 };
@@ -227,18 +230,10 @@ const Body = () => {
     <div className="body">
       <div className="search">Search</div>
       <div className="res-container">
-        <RestaurentCard resData={resObj[0]} />
-        <RestaurentCard resData={resObj[1]} />
-        <RestaurentCard resData={resObj[2]} />
-        <RestaurentCard resData={resObj[3]} />
-        <RestaurentCard resData={resObj[4]} />
-        <RestaurentCard resData={resObj[5]} />
-        <RestaurentCard resData={resObj[6]} />
-        <RestaurentCard resData={resObj[7]} />
-        <RestaurentCard resData={resObj[8]} />
-        <RestaurentCard resData={resObj[9]} />
-        <RestaurentCard resData={resObj[10]} />
-        <RestaurentCard resData={resObj[11]} />
+        {/*  once you add a loop or map, add key property so that react can uniquely identify the same level components*/}
+        {resList.map((res) => {
+          return <RestaurentCard key={res.data.id} resData={res} />;
+        })}
       </div>
     </div>
   );

@@ -47,11 +47,13 @@
   padding: 10px;
   margin: 10px;
   height: 300px;
+  background-color: #f0f0f0;
 }
 
 .res-card:hover {
   border: 1px solid rgb(80, 79, 79);
   cursor: grab;
+  background-color: #d7d4d4;
 }
 
 .res-logo {
