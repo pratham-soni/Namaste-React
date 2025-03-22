@@ -29,10 +29,6 @@
   list-style-type: none;
 }
 
-.search {
-  padding: 10px;
-}
-
 .res-container {
   padding: 10px;
   display: flex;
@@ -89,4 +85,9 @@
 
 .copyright-item > div {
   margin: 2px;
+}
+
+.filter-btn {
+  margin: 10px;
+  cursor: pointer;
 }

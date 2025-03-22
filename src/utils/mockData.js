@@ -1,53 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-/*
-* Header
-  - Logo
-  - Nav-Items
-* Body
-  - Search
-  - RestaurentContainer
-    - RestaurentCard
-      - img
-      - name of res, star rating, cuisine etc, delivery time
-      
-* Footer
-  - Copyright
-  - Links
-  - Address
-  - Contact
-*/
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png"
-        />
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-/*
-id
-resName
-cuisines
-avgRating
-costForTwo
-deliveryTime
-*/
-
 const resList = [
   {
     type: "restaurent",
@@ -55,8 +5,8 @@ const resList = [
       id: "334475",
       name: "KFC",
       cuisines: ["Indian", "Biriyani", "American", "Snacks", "Fast Food"],
-      costForTwo: 40000,
-      deliveryTime: 36,
+      costForTwo: 10000,
+      deliveryTime: 13,
       avgRating: "3.8",
       img: "http://b.zmtcdn.com/data/pictures/chains/4/10624/24697b617bb8aaf5b1c7df9a7074a662.jpg?output-format=webp&fit=around|771.75:416.25&crop=771.75:416.25;*,*",
     },
@@ -74,8 +24,8 @@ const resList = [
         "Guac Omelette",
       ],
       costForTwo: 60000,
-      deliveryTime: 36,
-      avgRating: "3.8",
+      deliveryTime: 20,
+      avgRating: "4.1",
       img: "https://content.jdmagicbox.com/comp/sonbhadra/c4/9999p5445.5445.230814141224.u8c4/catalogue/radhe-radhe-dhaba-and-shri-ji-family-restaurant-robertsganj-robertsganj-restaurants-i7es679l6e-250.jpg",
     },
   },
@@ -92,9 +42,9 @@ const resList = [
         "Chinese",
         "Mexican",
       ],
-      costForTwo: 40000,
-      deliveryTime: 36,
-      avgRating: "3.8",
+      costForTwo: 30000,
+      deliveryTime: 10,
+      avgRating: "4.3",
       img: "https://res.cloudinary.com/purnesh/image/upload/w_1000,f_auto,q_auto:eco,c_limit/olive-qutub1574232660289.jpg",
     },
   },
@@ -104,9 +54,9 @@ const resList = [
       id: "334478",
       name: "Sevilla, The Claridges",
       cuisines: ["American", "Snacks", "Burers", "Biriyani", "Fast Food"],
-      costForTwo: 40000,
-      deliveryTime: 36,
-      avgRating: "3.8",
+      costForTwo: 50000,
+      deliveryTime: 15,
+      avgRating: "2.8",
       img: "https://res.cloudinary.com/purnesh/image/upload/w_1000,f_auto,q_auto:eco,c_limit/sevilla1.jpg",
     },
   },
@@ -116,9 +66,9 @@ const resList = [
       id: "334479",
       name: "Tonino Ristorante",
       cuisines: ["American", "Snacks", "Fast Food"],
-      costForTwo: 40000,
-      deliveryTime: 36,
-      avgRating: "3.8",
+      costForTwo: 60000,
+      deliveryTime: 45,
+      avgRating: "3.9",
       img: "https://res.cloudinary.com/purnesh/image/upload/w_1000,f_auto,q_auto:eco,c_limit/tonino1574232660871.jpg",
     },
   },
@@ -128,9 +78,9 @@ const resList = [
       id: "334480",
       name: "Ottimo At Westview",
       cuisines: ["Burers", "Biriyani", "American", "Japanise"],
-      costForTwo: 40000,
-      deliveryTime: 36,
-      avgRating: "3.8",
+      costForTwo: 20000,
+      deliveryTime: 45,
+      avgRating: "4.6",
       img: "https://res.cloudinary.com/purnesh/image/upload/w_1000,f_auto,q_auto:eco,c_limit/otimo22.jpg",
     },
   },
@@ -140,9 +90,9 @@ const resList = [
       id: "334481",
       name: "Thai High",
       cuisines: ["Burers", "Snacks", "Fast Food"],
-      costForTwo: 40000,
-      deliveryTime: 36,
-      avgRating: "3.8",
+      costForTwo: 45000,
+      deliveryTime: 38,
+      avgRating: "4.8",
       img: "https://res.cloudinary.com/purnesh/image/upload/w_1000,f_auto,q_auto:eco,c_limit/thai-high1574232660148.jpg",
     },
   },
@@ -152,9 +102,9 @@ const resList = [
       id: "334482",
       name: "Music & Mountains - Hillside Cafe",
       cuisines: ["Burers", "Biriyani", "American", "Snacks", "Fast Food"],
-      costForTwo: 40000,
-      deliveryTime: 36,
-      avgRating: "3.8",
+      costForTwo: 35000,
+      deliveryTime: 37,
+      avgRating: "4.0",
       img: "https://res.cloudinary.com/purnesh/image/upload/w_1000,f_auto,q_auto:eco,c_limit/sakleys-the-mountain-cafe3%2Cjpg456.jpg",
     },
   },
@@ -164,9 +114,9 @@ const resList = [
       id: "334483",
       name: "The Piano Man ",
       cuisines: ["Burers", "Biriyani", "American", "Snacks", "Fast Food"],
-      costForTwo: 40000,
-      deliveryTime: 36,
-      avgRating: "3.8",
+      costForTwo: 26000,
+      deliveryTime: 41,
+      avgRating: "4.9",
       img: "https://res.cloudinary.com/purnesh/image/upload/w_1000,f_auto,q_auto:eco,c_limit/the-paino-man-jazz-club%2Cjpg99.jpg",
     },
   },
@@ -176,9 +126,9 @@ const resList = [
       id: "334484",
       name: "Rose Cafe",
       cuisines: ["Burers", "Biriyani", "American", "Snacks", "Fast Food"],
-      costForTwo: 40000,
-      deliveryTime: 36,
-      avgRating: "3.8",
+      costForTwo: 42000,
+      deliveryTime: 32,
+      avgRating: "3.4",
       img: "https://res.cloudinary.com/purnesh/image/upload/w_1000,f_auto,q_auto:eco,c_limit/rose-cafe1574232660863.jpg",
     },
   },
@@ -188,9 +138,9 @@ const resList = [
       id: "334485",
       name: "Ladera",
       cuisines: ["Snacks", "Fast Food"],
-      costForTwo: 40000,
-      deliveryTime: 36,
-      avgRating: "3.8",
+      costForTwo: 49000,
+      deliveryTime: 35,
+      avgRating: "4.1",
       img: "https://res.cloudinary.com/purnesh/image/upload/w_1000,f_auto,q_auto:eco,c_limit/ladera1574232660612.jpg",
     },
   },
@@ -200,69 +150,12 @@ const resList = [
       id: "334486",
       name: "Diggin",
       cuisines: ["Burers", "Biriyani", "Snacks"],
-      costForTwo: 40000,
-      deliveryTime: 36,
-      avgRating: "3.8",
+      costForTwo: 38000,
+      deliveryTime: 21,
+      avgRating: "3.6",
       img: "https://res.cloudinary.com/purnesh/image/upload/w_1000,f_auto,q_auto:eco,c_limit/diggin11608291096550.jpg",
     },
   },
 ];
 
-const RestaurentCard = (props) => {
-  const { resData } = props;
-  // optional chaining "?."
-  const { name, cuisines, avgRating, deliveryTime, costForTwo, img } =
-    resData?.data;
-  return (
-    <div className="res-card">
-      <img alt="res-logo" className="res-logo" src={img}></img>
-      <h3 className="res-name">{name}</h3>
-      <h5 className="res-cuisine">{cuisines.join(", ")}</h5>
-      <h5 className="res-rating"> {avgRating} ⭐️</h5>
-      <h5 className="res-ETA">{deliveryTime} minutes</h5>
-      <h5 className="res-ETA">{costForTwo / 100}</h5>
-    </div>
-  );
-};
-
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search">Search</div>
-      <div className="res-container">
-        {/*  once you add a loop or map, add key property so that react can uniquely identify the same level components*/}
-        {resList.map((res) => {
-          return <RestaurentCard key={res.data.id} resData={res} />;
-        })}
-      </div>
-    </div>
-  );
-};
-
-const Footer = () => {
-  return (
-    <div className="footer">
-      <div className="res-copyright-container">
-        <div className="copyright-item">
-          <h1>©</h1>
-        </div>
-        <div className="copyright-item-name">
-          <h3>Pratham</h3>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-      <Footer />
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+export default resList;
