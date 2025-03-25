@@ -96,6 +96,7 @@ const Body = () => {
           return <RestaurentCard key={res.info.id} resData={res} />;
         })}
       </div>
+      {/* changin */}
     </div>
   );
 };
