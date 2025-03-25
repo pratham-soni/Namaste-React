@@ -1,5 +1,6 @@
 import RestaurentCard from "./RestaurentCard";
 import { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   /*
@@ -31,7 +32,9 @@ const Body = () => {
     );
   };
 
-  return (
+  return restaurentList.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="filter">
         <button
