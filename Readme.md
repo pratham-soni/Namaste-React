@@ -79,3 +79,7 @@ import Component from "path";
 - this came in react-16.
 - this is new way of finding the diff and updating the dom.
 - React is making efficient DOM manupulation
+
+# Whenever the state variables changes, React will rerender the entire component accosiated with that state variable.
+
+- whenever state variable updates, react triggeres the recounciliation cycle, (rerenders the component)

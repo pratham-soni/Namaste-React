@@ -4,6 +4,7 @@ import { useState } from "react";
 const Header = () => {
   let [buttonText, setButtonText] = useState("Login");
 
+  // console.log("Header Rendered");
   return (
     <div className="header">
       <div className="logo-container">
