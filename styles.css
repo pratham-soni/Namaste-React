@@ -5,7 +5,7 @@
 
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   border: 1px solid black;
   border-radius: 5px;
   margin: 10px;
