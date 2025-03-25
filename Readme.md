@@ -61,3 +61,21 @@ import {Component} from "path";
 
 export default Component;
 import Component from "path";
+
+<!-- Hooks -->
+
+# hooks are nothing but the Java Script Utility functions written by FaceBook Team in "react" package.
+
+- useState()
+  - Whenever a state variable updates, React will re-render the componenet
+- useEffect()
+
+# Diff algorithm
+
+- finds out the difference between new and old virtual dom after changing the state variable (using setter)
+
+## React FIbre
+
+- this came in react-16.
+- this is new way of finding the diff and updating the dom.
+- React is making efficient DOM manupulation
