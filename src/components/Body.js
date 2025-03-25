@@ -98,7 +98,6 @@ const Body = () => {
         })}
         <h1> test</h1>
       </div>
-      {/* changin    */}
     </div>
   );
 };
