@@ -91,6 +91,7 @@ const Body = () => {
         </button>
       </div>
       <div className="res-container">
+        {/* test */}
         {/*  once you add a loop or map, add key property so that react can uniquely identify the same level components*/}
         {searchedRestaurentList.map((res) => {
           return <RestaurentCard key={res.info.id} resData={res} />;
