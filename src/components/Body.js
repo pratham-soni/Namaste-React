@@ -96,6 +96,7 @@ const Body = () => {
         {searchedRestaurentList.map((res) => {
           return <RestaurentCard key={res.info.id} resData={res} />;
         })}
+        <h1> test</h1>
       </div>
       {/* changin    */}
     </div>
