@@ -1,5 +1,9 @@
 # Namaste React
 
+# IMP points-
+
+- Speak while u code, for learning POV
+
 # Parcel
 
 - Dev build
@@ -70,6 +74,16 @@ import Component from "path";
   - Whenever a state variable updates, React will re-render the componenet
 - useEffect()
 
+## how is useEfefct called?--IMP
+
+# second argument '[]' of this function is not mandatory
+
+- 1. useEffect(()=> {}) :-without dependency array -> it will rander everytime my component re-randeres
+
+- 2. useEffect(() => {}, []):- with empty dependency array -> it will be called only on ititial render of the component (only 1 time)
+
+- 3. useEffect(() => {}, [listOFRestaurents]):- with value inside dependency array -> it will be called everytime value inside dependecy array changes (in this case 'listOfRestaurents' changes)
+
 # Diff algorithm
 
 - finds out the difference between new and old virtual dom after changing the state variable (using setter)
@@ -83,3 +97,15 @@ import Component from "path";
 # Whenever the state variables changes, React will rerender the entire component accosiated with that state variable.
 
 - whenever state variable updates, react triggeres the recounciliation cycle, (rerenders the component)
+
+# Routing
+
+- Never use <a> ancher tag </a> "<a>" in react project outher wise while routing via ancher ta, it will reload the entire page
+- instead use Link component <Link><Link/> component provided by "react-router-dom"
+- that's why react applications are known as SPA (single page applications)
+- while using Link whole page is not reloaded but we are only rendering the component based on path.
+
+## Two Types of routing web apps
+
+- Client side Routing (using <Link> componenet in react)
+- Server side Routing (using <a> tag in react)

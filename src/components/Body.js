@@ -1,6 +1,7 @@
 import RestaurentCard from "./RestaurentCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   /*
@@ -27,9 +28,9 @@ const Body = () => {
       "https://proxy.corsfix.com/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
-    // console.log(
-    //   json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    // );
+    console.log(
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
     setRestaurentList(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
@@ -94,7 +95,11 @@ const Body = () => {
         {/* test */}
         {/*  once you add a loop or map, add key property so that react can uniquely identify the same level components*/}
         {searchedRestaurentList.map((res) => {
-          return <RestaurentCard key={res.info.id} resData={res} />;
+          return (
+            <Link key={res.info.id} to={"/restaurents/" + res.info.id}>
+              <RestaurentCard resData={res} />;
+            </Link>
+          );
         })}
       </div>
     </div>
