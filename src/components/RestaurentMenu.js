@@ -27,15 +27,23 @@ const RestaurentMenu = () => {
     resMenu?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[5]?.card?.card;
   console.log(itemCards);
 
+  const { cloudinaryImageId } = resMenu?.cards[2]?.card?.card?.info;
+  console.log(cloudinaryImageId);
+
   return (
     <div className="resMenuContainer">
       <div className="resDetailsContainer">
-        <h1>{name}</h1>
-        <h4>Cuisines: {cuisines.join(", ")}</h4>
-        <h4>Rating: {avgRating}</h4>
-        <h4>Cost for Two: {costForTwoMessage}</h4>
+        <div className="resDetails">
+          <h1>{name}</h1>
+          <h4>Cuisines: {cuisines.join(", ")}</h4>
+          <h4>Rating: {avgRating}</h4>
+          <h4>Cost for Two: {costForTwoMessage}</h4>
+        </div>
+        <div className="resImgDetails">
+          <img className="resImg" src={CDN_URL + cloudinaryImageId}></img>
+        </div>
       </div>
-      <div>
+      <div className="menuItemContainer">
         <h2>Menu</h2>
         <ul className="menuItems">
           {itemCards.map((item) => (

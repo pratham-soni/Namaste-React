@@ -97,7 +97,7 @@ const Body = () => {
         {searchedRestaurentList.map((res) => {
           return (
             <Link key={res.info.id} to={"/restaurents/" + res.info.id}>
-              <RestaurentCard resData={res} />;
+              <RestaurentCard resData={res} />
             </Link>
           );
         })}

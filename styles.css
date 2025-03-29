@@ -9,15 +9,25 @@
 .header {
   display: flex;
   justify-content: space-between;
-  border: 1px solid black;
+  align-items: center;
+  /* border: 1px solid black; */
   border-radius: 5px;
-  margin: 10px;
+  margin: 5px;
   padding: 5px;
-  height: 60px;
+  height: 65px;
+  background-color: #f0f0f0;
 }
 
 .logo {
-  width: 55px;
+  width: 100px;
+}
+
+.logo-container {
+  background-color: red;
+  overflow: hidden;
+  border-radius: 5px;
+  width: 110px;
+  padding: 5px;
 }
 
 .nav-items > ul {
@@ -32,6 +42,9 @@
   padding: 5px;
   list-style-type: none;
   background-color: red;
+  border-radius: 5px;
+  width: 97px;
+  text-align: center;
 }
 
 .nav-item {
@@ -48,7 +61,7 @@
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .res-card {
@@ -124,9 +137,14 @@
 
 .login-btn {
   width: 100px;
-  height: 40px;
+  height: 34px;
   margin: 10px;
   cursor: pointer;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.3rem;
 }
 
 .filter {
@@ -168,7 +186,37 @@
 }
 
 .resDetailsContainer {
+  width: 100%;
   margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+}
+
+.resDetails {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.resDetails > h1 {
+  color: red;
+  padding: 10px;
+}
+
+.resDetails > h4 {
+  padding: 2px;
+  padding-left: 10px;
+}
+
+.resImgDetails {
+  border-radius: 210px;
+  overflow: hidden;
+}
+.resImg {
+  width: 275px;
+  height: 263px;
 }
 
 .menuItems {
@@ -196,4 +244,13 @@
 
 .menuItemImg {
   width: 100px;
+}
+
+.menuItemContainer {
+  width: 70%;
+}
+
+.menuItemContainer > h2 {
+  margin: 10px;
+  padding: 0 20px;
 }
