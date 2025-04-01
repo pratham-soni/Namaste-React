@@ -52,7 +52,8 @@ const RestaurentMenu = () => {
                 <h3>
                   {item.card.info.name}
                   {"    @  "}
-                  {item.card.info.price / 100}
+                  {item.card.info.price / 100 ||
+                    item.card.info.defaultPrice / 100}
                 </h3>
                 <img
                   src={CDN_URL + item.card.info.imageId}

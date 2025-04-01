@@ -10,7 +10,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* border: 1px solid black; */
   border-radius: 5px;
   margin: 5px;
   padding: 5px;
@@ -93,6 +92,9 @@
   margin: 10px;
   padding: 10px;
   border: 1px solid black;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .res-copyright-container {
@@ -211,12 +213,12 @@
 }
 
 .resImgDetails {
-  border-radius: 210px;
+  border-radius: 50%;
   overflow: hidden;
 }
 .resImg {
-  width: 275px;
-  height: 263px;
+  width: 265px;
+  height: 265px;
 }
 
 .menuItems {
@@ -247,10 +249,19 @@
 }
 
 .menuItemContainer {
-  width: 70%;
+  width: 50%;
 }
 
 .menuItemContainer > h2 {
   margin: 10px;
   padding: 0 20px;
+}
+
+.user-card {
+  padding: 10px;
+  border: 2px solid black;
+}
+
+.avatar_img {
+  width: 100px;
 }

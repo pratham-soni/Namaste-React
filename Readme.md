@@ -109,3 +109,5 @@ import Component from "path";
 
 - Client side Routing (using <Link> componenet in react)
 - Server side Routing (using <a> tag in react)
+
+# !!! never compare the react lifecycle methods to functional components !!!
