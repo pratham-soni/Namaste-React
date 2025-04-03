@@ -111,3 +111,11 @@ import Component from "path";
 - Server side Routing (using <a> tag in react)
 
 # !!! never compare the react lifecycle methods to functional components !!!
+
+# Lazy Loading
+
+- chunking
+- lazy loading
+- initialy we will not load grocery, when we will go to grocery page, will load it
+- on demand loading
+- dynamic loading

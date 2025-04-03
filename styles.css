@@ -44,16 +44,12 @@
   border-radius: 5px;
   width: 97px;
   text-align: center;
+  color: white;
 }
 
 .nav-item {
   border-radius: 3px;
   color: white;
-}
-
-.nav-item ul li :hover {
-  background-color: #f0f0f0;
-  color: red;
 }
 
 .res-container {
