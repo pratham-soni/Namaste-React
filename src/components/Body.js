@@ -53,18 +53,18 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      <div className="filter flex">
+        <div className="search m-4 p-4">
           <input
             type="text"
-            className="input-box"
+            className="border border-solid border-black"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           ></input>
           <button
-            className="search-btn"
+            className="px-4 py-0.5 bg-green-100 m-4 rounded-md"
             onClick={() => {
               // filter the restaurent and update the UI
               // search text
@@ -79,7 +79,7 @@ const Body = () => {
             Search Restaurent
           </button>
           <button
-            className="reset-btn"
+            className="px-4 py-0.5 bg-green-100 m-4 rounded-md"
             onClick={() => {
               setSearchedRestaurentList(restaurentList);
             }}
@@ -88,19 +88,21 @@ const Body = () => {
           </button>
         </div>
 
-        <button
-          className="filter-btn"
-          onClick={() => {
-            const filteredList = searchedRestaurentList.filter(
-              (res) => res.info.avgRating >= 4.4
-            );
-            setSearchedRestaurentList(filteredList);
-          }}
-        >
-          Top Rated Restaurents
-        </button>
+        <div className="search m-4 flex items-center">
+          <button
+            className="px-4 py-0.5 bg-[#f0f0f0] m-4 rounded-md"
+            onClick={() => {
+              const filteredList = searchedRestaurentList.filter(
+                (res) => res.info.avgRating >= 4.4
+              );
+              setSearchedRestaurentList(filteredList);
+            }}
+          >
+            Top Rated Restaurents
+          </button>
+        </div>
       </div>
-      <div className="res-container">
+      <div className="res-container flex flex-wrap justify-between m-4 p-4">
         {/* test */}
         {/*  once you add a loop or map, add key property so that react can uniquely identify the same level components*/}
         {searchedRestaurentList.map((res) => {
