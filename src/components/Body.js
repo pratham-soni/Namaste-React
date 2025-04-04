@@ -52,19 +52,19 @@ const Body = () => {
   return restaurentList.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
+    <div className="body bg-amber-50">
       <div className="filter flex">
         <div className="search m-4 p-4">
           <input
             type="text"
-            className="border border-solid border-black"
+            className="border border-solid border-black rounded-sm px-2 py-0.5"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           ></input>
           <button
-            className="px-4 py-0.5 bg-green-100 m-4 rounded-md"
+            className="px-4 py-1 bg-green-100 m-4 rounded-md hover:bg-green-200"
             onClick={() => {
               // filter the restaurent and update the UI
               // search text
@@ -79,7 +79,7 @@ const Body = () => {
             Search Restaurent
           </button>
           <button
-            className="px-4 py-0.5 bg-green-100 m-4 rounded-md"
+            className="px-4 py-1 bg-green-100 m-4 rounded-md hover:bg-green-200"
             onClick={() => {
               setSearchedRestaurentList(restaurentList);
             }}
@@ -90,7 +90,7 @@ const Body = () => {
 
         <div className="search m-4 flex items-center">
           <button
-            className="px-4 py-0.5 bg-[#f0f0f0] m-4 rounded-md"
+            className="px-4 py-1 bg-[#f0f0f0] m-4 rounded-md hover:bg-gray-200"
             onClick={() => {
               const filteredList = searchedRestaurentList.filter(
                 (res) => res.info.avgRating >= 4.4

@@ -14,36 +14,38 @@ const Header = () => {
         <img className="w-30" src={LOGO_URL} />
       </div>
       <div className="flex items-center">
-        <ul className="flex m-5 p-5">
-          <li className="px-3 ">Active: {onlineStatus ? "✅" : "🔴"}</li>
-          <li className="px-3">
+        <ul className="flex m-5 p-5 py-5">
+          <li className="px-3 hover:text-gray-500 cursor-pointer">
+            Active: {onlineStatus ? "✅" : "🔴"}
+          </li>
+          <li className="px-3 hover:text-gray-500">
             <Link to="/" className="nav-item">
               Home
             </Link>
           </li>
-          <li className="px-3">
+          <li className="px-3 hover:text-gray-500">
             <Link to="/about" className="nav-item">
               About Us
             </Link>
           </li>
-          <li className="px-3">
+          <li className="px-3 hover:text-gray-500">
             <Link to="/contact" className="nav-item">
               Contact Us
             </Link>
           </li>
-          <li className="px-3">
+          <li className="px-3 hover:text-gray-500">
             <Link to="/grocery" className="nav-item">
               Grocery
             </Link>
           </li>
-          <li className="px-3">
+          <li className="px-3 hover:text-gray-500">
             <Link to="/" className="nav-item">
               Cart
             </Link>
           </li>
 
           <button
-            className="login-btn"
+            className="login-btn hover:text-gray-500 px-3"
             onClick={() => {
               buttonText === "Login"
                 ? setButtonText("Logout")
