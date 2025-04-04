@@ -2,6 +2,7 @@ import { LOGO_URL } from "../utils/constants";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import Logo from "./Logo";
 
 const Header = () => {
   let [buttonText, setButtonText] = useState("Login");
@@ -10,9 +11,9 @@ const Header = () => {
   // console.log("Header Rendered");
   return (
     <div className="flex justify-between bg-pink-100 shadow-lg m-2">
-      <div className="logo-container m-5 p-5 bg-red-300">
-        <img className="w-30" src={LOGO_URL} />
-      </div>
+      <Link to="/">
+        <Logo />
+      </Link>
       <div className="flex items-center">
         <ul className="flex m-5 p-5 py-5">
           <li className="px-3 hover:text-gray-500 cursor-pointer">
