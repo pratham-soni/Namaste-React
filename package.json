@@ -1,5 +1,5 @@
 {
-  "homepage": "https://pratham-soni.github.io/Namaste-React/",
+  "homepage": "https://pratham-soni.github.io/Namaste-React",
   "name": "namaste-react",
   "version": "1.0.0",
   "description": "making this for learning",
@@ -7,7 +7,7 @@
     "start": "parcel index.html",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "build": "parcel build index.html",
+    "build": "parcel build index.html --public-url /Namaste-React/",
     "test": "jest"
   },
   "repository": {
