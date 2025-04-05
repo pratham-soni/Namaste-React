@@ -15,10 +15,11 @@ const RestaurentMenu = () => {
 
   const { itemCards } =
     resMenu?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[5]?.card?.card;
-  console.log(itemCards);
+  // console.log(itemCards);
+
+  console.log(resMenu?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
 
   const { cloudinaryImageId } = resMenu?.cards[2]?.card?.card?.info;
-  console.log(cloudinaryImageId);
 
   return (
     <div className="resMenuContainer">
@@ -26,7 +27,7 @@ const RestaurentMenu = () => {
         <div className="resDetails m-4 p-2">
           <h1 className="font-bold text-xl py-2">{name}</h1>
           <h4 className="py-0.5">Cuisines: {cuisines.join(", ")}</h4>
-          <h4 className="py-0.5">Rating: {avgRating}</h4>
+          <h4 className="py-0.5">Rating: {avgRating} ⭐️</h4>
           <h4 className="py-0.5">Cost for Two: {costForTwoMessage}</h4>
         </div>
         <div className="resImgDetails w-[200px] ">

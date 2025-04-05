@@ -119,3 +119,7 @@ import Component from "path";
 - initialy we will not load grocery, when we will go to grocery page, will load it
 - on demand loading
 - dynamic loading
+
+# Higher Order function
+
+- function that takes a component and returns a component

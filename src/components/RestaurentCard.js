@@ -21,4 +21,17 @@ const RestaurentCard = (props) => {
   );
 };
 
+export const withLastMileTravel = (RestaurentCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="absolute bg-black text-white mx-3 rounded-lg p-2 bg-opacity-5">
+          Travelled More than {props.resData.info.sla.lastMileTravel}km
+        </label>
+        <RestaurentCard {...props} />
+      </div>
+    );
+  };
+};
+
 export default RestaurentCard;

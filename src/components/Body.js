@@ -1,4 +1,4 @@
-import RestaurentCard from "./RestaurentCard";
+import RestaurentCard, { withLastMileTravel } from "./RestaurentCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -18,6 +18,8 @@ const Body = () => {
   let [searchText, setSearchText] = useState("");
   // whenever state variable updates, react triggeres the recounciliation cycle, (rerenders the component)
   console.log("Body Randered");
+
+  const ResCardWithLastMileTravelled = withLastMileTravel(RestaurentCard);
 
   // if u have to do something, after randering component, u can write it inside useEffect
   useEffect(() => {
@@ -57,14 +59,14 @@ const Body = () => {
         <div className="search m-4 p-4">
           <input
             type="text"
-            className="border border-solid border-black rounded-sm px-2 py-0.5"
+            className="border border-solid border-black rounded-sm px-2 py-0.5 bg-white"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           ></input>
           <button
-            className="px-4 py-1 bg-green-100 m-4 rounded-md hover:bg-green-200"
+            className="px-4 py-1 bg-green-100 m-4 rounded-md hover:bg-green-200 cursor-pointer"
             onClick={() => {
               // filter the restaurent and update the UI
               // search text
@@ -79,7 +81,7 @@ const Body = () => {
             Search Restaurent
           </button>
           <button
-            className="px-4 py-1 bg-green-100 m-4 rounded-md hover:bg-green-200"
+            className="px-4 py-1 bg-green-100 m-4 rounded-md hover:bg-green-200 cursor-pointer"
             onClick={() => {
               setSearchedRestaurentList(restaurentList);
             }}
@@ -90,7 +92,7 @@ const Body = () => {
 
         <div className="search m-4 flex items-center">
           <button
-            className="px-4 py-1 bg-[#f0f0f0] m-4 rounded-md hover:bg-gray-200"
+            className="px-4 py-1 bg-[#f0f0f0] m-4 rounded-md hover:bg-gray-200 cursor-pointer"
             onClick={() => {
               const filteredList = searchedRestaurentList.filter(
                 (res) => res.info.avgRating >= 4.4
@@ -108,7 +110,11 @@ const Body = () => {
         {searchedRestaurentList.map((res) => {
           return (
             <Link key={res.info.id} to={"/restaurents/" + res.info.id}>
-              <RestaurentCard resData={res} />
+              {res.info.sla.lastMileTravel >= 1 ? (
+                <ResCardWithLastMileTravelled resData={res} />
+              ) : (
+                <RestaurentCard resData={res} />
+              )}
             </Link>
           );
         })}
