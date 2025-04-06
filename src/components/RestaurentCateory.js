@@ -1,12 +1,16 @@
 import RestaurentItem from "./RestaurentItem";
-import { useState } from "react";
 
-const RestaurentCategory = ({ resCatagory }) => {
-  const [showItems, setShowItems] = useState(false);
-  console.log(resCatagory);
+const RestaurentCategory = ({
+  resCatagory,
+  showItems,
+  setActiveIndex,
+  closeItem,
+}) => {
+  // const [showItems, setShowItems] = useState(false);
+  // console.log(resCatagory);
   const { title, itemCards } = resCatagory;
   const handelClick = () => {
-    setShowItems(!showItems);
+    !showItems ? setActiveIndex() : closeItem();
   };
 
   return (
