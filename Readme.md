@@ -123,3 +123,10 @@ import Component from "path";
 # Higher Order function
 
 - function that takes a component and returns a component
+
+# Lifting State Up
+
+- Resource: https://react.dev/learn/sharing-state-between-components#lifting-state-up-by-example
+- Remove state from the child components.
+- Pass hardcoded data from the common parent.
+- Add state to the common parent and pass it down together with the event handlers.

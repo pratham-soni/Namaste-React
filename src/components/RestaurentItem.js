@@ -15,7 +15,7 @@ const RestaurentItem = ({ resItem }) => {
         <p className="text-xs text-gray-500 p-2">{info?.description}</p>
       </div>
       <div className=" w-[150px] h-full my-auto">
-        <button className="bg-white text-green-600 absolute  rounded-sm m-0.5 px-2 ml-[40px] mb-2 text-sm border-gray-500">
+        <button className="bg-gray-200 cursor-pointer text-green-600 absolute rounded-sm m-0.5 px-2 ml-[40px] mb-2 text-sm border border-gray-200 shadow-gray-40 shadow-sm hover:border-gray-300">
           ADD +
         </button>
         <img

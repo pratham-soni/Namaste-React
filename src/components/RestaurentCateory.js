@@ -2,9 +2,9 @@ import RestaurentItem from "./RestaurentItem";
 import { useState } from "react";
 
 const RestaurentCategory = ({ resCatagory }) => {
+  const [showItems, setShowItems] = useState(false);
   console.log(resCatagory);
   const { title, itemCards } = resCatagory;
-  const [showItems, setShowItems] = useState(false);
   const handelClick = () => {
     setShowItems(!showItems);
   };
