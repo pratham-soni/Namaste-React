@@ -26,47 +26,52 @@ const AppLayout = () => {
 
 // whenever we have to develop route, we need to develop routing configuration
 // config means what will happen on a specific route
-const appRouter = createBrowserRouter([
+const appRouter = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <AppLayout />,
+      children: [
+        {
+          path: "/",
+          element: (
+            <>
+              <Body />
+            </>
+          ),
+        },
+        {
+          path: "/about",
+          element: (
+            <Suspense fallback={<Loading />}>
+              <About />
+            </Suspense>
+          ),
+        },
+        {
+          path: "/contact",
+          element: <Contact />,
+        },
+        {
+          path: "/grocery",
+          element: (
+            <Suspense fallback={<Loading />}>
+              <Grocery />
+            </Suspense>
+          ),
+        },
+        {
+          path: "/restaurents/:resId",
+          element: <RestaurentMenu />,
+        },
+      ],
+      errorElement: <Error />,
+    },
+  ],
   {
-    path: "/",
-    element: <AppLayout />,
-    children: [
-      {
-        path: "/",
-        element: <Body />,
-      },
-      {
-        path: "/",
-        element: <Logo />,
-      },
-      {
-        path: "/about",
-        element: (
-          <Suspense fallback={<Loading />}>
-            <About />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/contact",
-        element: <Contact />,
-      },
-      {
-        path: "/grocery",
-        element: (
-          <Suspense fallback={<Loading />}>
-            <Grocery />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/restaurents/:resId",
-        element: <RestaurentMenu />,
-      },
-    ],
-    errorElement: <Error />,
-  },
-]);
+    basename: "/Namaste-React", // 👈 Add this
+  }
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter} />);
