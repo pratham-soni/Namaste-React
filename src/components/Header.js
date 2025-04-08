@@ -1,12 +1,14 @@
-import { LOGO_URL } from "../utils/constants";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import Logo from "./Logo";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   let [buttonText, setButtonText] = useState("Login");
   const onlineStatus = useOnlineStatus();
+
+  const { loggedInUser } = useContext(UserContext);
 
   // console.log("Header Rendered");
   return (
@@ -55,6 +57,7 @@ const Header = () => {
           >
             {buttonText}
           </button>
+          <li className="px-3 hover:text-gray-500">{loggedInUser}</li>
         </ul>
       </div>
     </div>

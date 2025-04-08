@@ -1,35 +1,26 @@
 import RestaurentCard, { withLastMileTravel } from "./RestaurentCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { Restaurent_List, Proxy_Fix } from "../utils/constants";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
-  /*
-   * once we create restaurentList state variable, react will keep an eye on it.
-   * once setRestaurentList is called, that means we are changing something in restairentList,
-   * it will trigger the diff algo of react. It will find out the differance between the old and new virtual DOM
-   * and later it will update (re-render) the UI.
-   */
-
   let [restaurentList, setRestaurentList] = useState([]);
   let [searchedRestaurentList, setSearchedRestaurentList] = useState([]);
-
   let [searchText, setSearchText] = useState("");
-  // whenever state variable updates, react triggeres the recounciliation cycle, (rerenders the component)
-  console.log("Body Randered");
+
+  const { loggedInUser, setUserName } = useContext(UserContext);
 
   const ResCardWithLastMileTravelled = withLastMileTravel(RestaurentCard);
 
-  // if u have to do something, after randering component, u can write it inside useEffect
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://proxy.corsfix.com/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(Proxy_Fix + Restaurent_List);
     const json = await data.json();
     console.log(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -88,6 +79,13 @@ const Body = () => {
           >
             Reset Search
           </button>
+          <label>User Name: </label>
+          <input
+            type="text"
+            className="border border-solid border-black mx-2 rounded-sm px-2 py-0.5 bg-white"
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+          ></input>
         </div>
 
         <div className="search m-4 flex items-center">
