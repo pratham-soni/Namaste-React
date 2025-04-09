@@ -130,3 +130,12 @@ import Component from "path";
 - Remove state from the child components.
 - Pass hardcoded data from the common parent.
 - Add state to the common parent and pass it down together with the event handlers.
+
+# Redux Toolkit
+
+- Install @redux/toolkit and react-redux
+- Build our own store
+- Connect our store toour app
+- Slice (CardSlice)
+- Dispatch (action)
+- Selector

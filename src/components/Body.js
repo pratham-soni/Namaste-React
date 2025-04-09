@@ -45,7 +45,7 @@ const Body = () => {
   return restaurentList.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body bg-amber-50">
+    <div className="body bg-gray-50">
       <div className="filter flex">
         <div className="search m-4 p-4">
           <input
@@ -59,8 +59,6 @@ const Body = () => {
           <button
             className="px-4 py-1 bg-green-100 m-4 rounded-md hover:bg-green-200 cursor-pointer"
             onClick={() => {
-              // filter the restaurent and update the UI
-              // search text
               console.log(searchText);
 
               const searchedRestaurentList = restaurentList.filter((res) =>
@@ -103,8 +101,6 @@ const Body = () => {
         </div>
       </div>
       <div className="res-container flex flex-wrap justify-between m-4 p-4">
-        {/* test */}
-        {/*  once you add a loop or map, add key property so that react can uniquely identify the same level components*/}
         {searchedRestaurentList.map((res) => {
           return (
             <Link key={res.info.id} to={"/restaurents/" + res.info.id}>

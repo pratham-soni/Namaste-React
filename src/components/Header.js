@@ -3,12 +3,17 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import Logo from "./Logo";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   let [buttonText, setButtonText] = useState("Login");
   const onlineStatus = useOnlineStatus();
 
   const { loggedInUser } = useContext(UserContext);
+
+  // subscribing to the store using the selector
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
 
   // console.log("Header Rendered");
   return (
@@ -41,9 +46,9 @@ const Header = () => {
               Grocery
             </Link>
           </li>
-          <li className="px-3 hover:text-gray-500">
-            <Link to="/" className="nav-item">
-              Cart
+          <li className="px-3 hover:text-gray-500 font-bold text-lg">
+            <Link to="/cart" className="nav-item">
+              Cart-({cartItems.length} items)
             </Link>
           </li>
 
