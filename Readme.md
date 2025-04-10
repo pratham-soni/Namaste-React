@@ -173,3 +173,9 @@ import Component from "path";
 <!-- "__" dunder test -->
 
 - we can use as a reserved word for dunders
+
+# testing fortames,
+
+- Render something render()
+- Query Something screen.byRole()
+- Asser Something expect().toBe()
