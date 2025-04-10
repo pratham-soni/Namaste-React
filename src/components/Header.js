@@ -13,7 +13,7 @@ const Header = () => {
 
   // subscribing to the store using the selector
   const cartItems = useSelector((store) => store.cart.items);
-  console.log(cartItems);
+  // console.log(cartItems);
 
   // console.log("Header Rendered");
   return (

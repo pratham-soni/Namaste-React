@@ -139,3 +139,37 @@ import Component from "path";
 - Slice (CardSlice)
 - Dispatch (action)
 - Selector
+
+# Types of Testing (Developer Testing)
+
+- Unit testing
+- Integration testing
+- E2E testing
+
+...
+
+# setup testing in app
+
+- install react testing library
+- install jest
+- installed babel dependicies required whne we use jest with babel
+- configure babel (added babel.config.js)
+- configure parcelrc config to basicaly disable babel default transpilation
+- jest configuration ( npx jest --init)
+- install jsdom library (npm install --save-dev jest-environment-jsdom)
+- regx -> **/**tests**/**/_.[jt]s?(x), \*\*/?(_.)+(spec|test).[tj]s?(x)
+- which means below can be defined as test file
+  <!-- - either u create a test file under __tests__ -->
+  <!-- - or u can create and file with below extentions -->
+  - Headers.test.js
+  - Headers.test.ts
+  - Headers.spec.js
+  - Headers.spec.js
+- install @babel/preset-react => to make JSX work in test cases
+- include @babel/preset-react inside my babel config
+- Include a library to avoid this error, "expect(...).toBeInTheDocument is not a function"
+  - @testing-library/jest-dom
+
+<!-- "__" dunder test -->
+
+- we can use as a reserved word for dunders
