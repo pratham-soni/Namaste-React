@@ -169,6 +169,9 @@ import Component from "path";
 - include @babel/preset-react inside my babel config
 - Include a library to avoid this error, "expect(...).toBeInTheDocument is not a function"
   - @testing-library/jest-dom
+- we can add below so that we don't need to re-run the test suit. so below will run on saveing the any test file.
+  - "watch-test": "jest --watch"
+- whenever u have async operation, state update in the component, while writing test cases we need to use act fn provided by react.
 
 <!-- "__" dunder test -->
 
@@ -176,6 +179,7 @@ import Component from "path";
 
 # testing fortames,
 
-- Render something render()
-- Query Something screen.byRole()
-- Asser Something expect().toBe()
+- Render something - render()
+- Query Something - screen.byRole()
+- Assert Something - expect().toBe()
+- we can use "it" or "test". both are the same thing.

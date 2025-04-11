@@ -22,6 +22,7 @@ const Body = () => {
   const fetchData = async () => {
     const data = await fetch(Proxy_Fix + Restaurent_List);
     const json = await data.json();
+    // console.log(json);
     // console.log(
     //   json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     // );
@@ -50,6 +51,7 @@ const Body = () => {
         <div className="search m-4 p-4">
           <input
             type="text"
+            data-testid="searchInput"
             className="border border-solid border-black rounded-sm px-2 py-0.5 bg-white"
             value={searchText}
             onChange={(e) => {
