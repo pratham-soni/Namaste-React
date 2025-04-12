@@ -13,58 +13,66 @@ We don't make an actual network call from test, because this test is running on 
 ! Note:- Before running below suit, pls update the restaurentListMock.json based on live data and simulate on UI first for expectation.
 */
 
-// creating mock fetch method
-global.fetch = jest.fn(() => {
-  return Promise.resolve({
-    json: () => {
-      return Promise.resolve(MOCK_DATA);
-    },
-  });
-});
+describe("search feature test cases on homepage =>", () => {
+  // creating mock fetch method
 
-it("Should search restaurant list for pizza input", async () => {
-  await act(async () => {
-    render(
-      <BrowserRouter>
-        <Body />
-      </BrowserRouter>
-    );
+  beforeAll(() => {
+    global.fetch = jest.fn(() => {
+      return Promise.resolve({
+        json: () => {
+          return Promise.resolve(MOCK_DATA);
+        },
+      });
+    });
   });
-  const initialCards = screen.getAllByTestId("resCard");
-  expect(initialCards.length).toBe(20);
-
-  const searchInput = screen.getByTestId("searchInput");
-  const searchButton = screen.getByRole("button", {
-    name: /Search Restaurent/,
+  //  randering the component before each test cases
+  beforeEach(async () => {
+    await act(async () => {
+      render(
+        <BrowserRouter>
+          <Body />
+        </BrowserRouter>
+      );
+    });
   });
-  fireEvent.change(searchInput, { target: { value: "pizza" } });
-  fireEvent.click(searchButton);
 
-  await waitFor(() => {
+  afterEach(() => {
+    // console.log("above test case executed successfully...");
+  });
+
+  afterAll(() => {
+    // console.log("All test cases executed !!!!");
+  });
+
+  it("1. Should search restaurant list for pizza input", async () => {
+    const initialCards = screen.getAllByTestId("resCard");
+    expect(initialCards.length).toBe(20);
+
+    const searchInput = screen.getByTestId("searchInput");
+    const searchButton = screen.getByRole("button", {
+      name: /Search Restaurent/,
+    });
+    fireEvent.change(searchInput, { target: { value: "pizza" } });
+    fireEvent.click(searchButton);
+
+    await waitFor(() => {
+      const filteredCards = screen.getAllByTestId("resCard");
+      expect(filteredCards.length).toBe(1);
+      // console.log(filteredCards);
+    });
+  });
+
+  it("2. Should search top rated restaurant list using button on homepage", async () => {
+    const initialCards = screen.getAllByTestId("resCard");
+    expect(initialCards.length).toBe(20);
+
+    const searchButton = screen.getByRole("button", {
+      name: /Top Rated Restaurents/,
+    });
+    fireEvent.click(searchButton);
+
     const filteredCards = screen.getAllByTestId("resCard");
-    expect(filteredCards.length).toBe(1);
-    console.log(filteredCards);
+    // console.log(filteredCards.length);
+    expect(filteredCards.length).toBe(13);
   });
-});
-
-it("Should search top rated restaurant list using button on homepage", async () => {
-  await act(async () => {
-    render(
-      <BrowserRouter>
-        <Body />
-      </BrowserRouter>
-    );
-  });
-
-  const initialCards = screen.getAllByTestId("resCard");
-  expect(initialCards.length).toBe(20);
-
-  const searchButton = screen.getByRole("button", {
-    name: /Top Rated Restaurents/,
-  });
-  fireEvent.click(searchButton);
-
-  const filteredCards = screen.getAllByTestId("resCard");
-  console.log(filteredCards.length);
-  expect(filteredCards.length).toBe(13);
 });

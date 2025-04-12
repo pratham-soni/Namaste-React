@@ -13,7 +13,10 @@ const RestaurentItem = ({ resItem }) => {
   };
 
   return (
-    <div className="m-2 p-1 flex justify-between rounded-lg shadow-xl bg-gradient-to-t from-gray-200 to-white  h-[150px]">
+    <div
+      data-testid="foodItems"
+      className="m-2 p-1 flex justify-between rounded-lg shadow-xl bg-gradient-to-t from-gray-200 to-white  h-[150px]"
+    >
       <div className="w-9/12 m-2 px-1">
         <h1 className="font-bold text-sm pb-2">{info.name}</h1>
         <h2 className="text-sm ">
