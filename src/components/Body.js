@@ -22,16 +22,18 @@ const Body = () => {
   const fetchData = async () => {
     const data = await fetch(Proxy_Fix + Restaurent_List);
     const json = await data.json();
-    // console.log(json);
+
     // console.log(
-    //   json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    //   json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle.restaurants
     // );
     setRestaurentList(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      // json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
 
     setSearchedRestaurentList(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      // json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
@@ -61,7 +63,7 @@ const Body = () => {
           <button
             className="px-4 py-1 bg-green-100 m-4 rounded-md hover:bg-green-200 cursor-pointer"
             onClick={() => {
-              console.log(searchText);
+              // console.log(searchText);
 
               const searchedRestaurentList = restaurentList.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -93,9 +95,10 @@ const Body = () => {
             className="px-4 py-1 bg-[#f0f0f0] m-4 rounded-md hover:bg-gray-200 cursor-pointer"
             onClick={() => {
               const filteredList = searchedRestaurentList.filter(
-                (res) => res.info.avgRating >= 4.4
+                (res) => res.info.avgRating >= 4.5
               );
               setSearchedRestaurentList(filteredList);
+              // console.log(filteredList);
             }}
           >
             Top Rated Restaurents

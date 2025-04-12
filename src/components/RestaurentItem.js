@@ -32,6 +32,7 @@ const RestaurentItem = ({ resItem }) => {
         <img
           src={CDN_URL + info.imageId}
           className="w-full bg-white rounded-lg h-[140px]"
+          alt="restaurent image.png"
         ></img>
       </div>
     </div>

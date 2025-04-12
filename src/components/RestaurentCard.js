@@ -8,7 +8,7 @@ const RestaurentCard = (props) => {
     resData?.info;
   return (
     <div
-      data-testid="rescard"
+      data-testid="resCard"
       className="res-card m-4 p-2 w-[280px] bg-gray-100 shadow-lg hover:bg-gray-200 rounded-md h-[410px] text-sm"
     >
       <img
